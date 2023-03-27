@@ -1,0 +1,1 @@
+all file .c go in this directory
