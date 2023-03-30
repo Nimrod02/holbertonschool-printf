@@ -3,7 +3,7 @@
 int _printf(const char *format, ...)
 {
         int index = 0;
-	int (*f)
+	int (*f);
 	va_list list;
 	va_start (list, format);
 
