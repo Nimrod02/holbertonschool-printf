@@ -3,20 +3,23 @@
 int _printf(const char *format, ...)
 {
         int index = 0;
-	int (*f);
+	// int f;
 	va_list list;
 	va_start (list, format);
 
         if (format == NULL)
                 return (EXIT_FAILURE);
 
-	while (format[index])
+	while (format[index] != '\0')
 	{
-		if (format[index] != '%')
-			_putchar (format[index]);		
-			if (format[index] == '%' && (format[index] != 'c' || format[index] != 's'))
-					_putchar (format[index]);
-			
+		if (format[index] == '%')
+		{
+			// TODO: get function from c
+			// TODO: execute the previous function
+		}
+		_putchar (format[index]);
+		// if (format[index] != '%')
+		// 	_putchar (format[index]);
 		index++;
 	}
 
