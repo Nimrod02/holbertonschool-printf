@@ -10,39 +10,41 @@
 int _printf(const char *format, ...)
 {
 	int index = 0;
+	const char *p;
+
 	va_list list;
 
 	va_start(list, format);
 
 	if (format == NULL)
 	return (-1);
-
-	for (; format[index] != '\0'; index++)
+	p = format;
+	for (; *p != '\0'; p++)
 	{
-
-		if (format[index] == '%')
+		if (*p == '%')
 		{
-			index++;
-
-			switch (format[index])
+			p++;
+			switch (*p)
 			{
 				case 'c':
-				print_c(list);
+					print_c(list);
 				break;
 				case 's':
-				print_s(list);
+					print_s(list);
 				break;
 				case '%':
-				print_pourcent(list);
+					print_pourcent(list);
 				break;
 				default:
-					_putchar (format[index]);
-				break;
+					_putchar ('%');
+					_putchar (*p);
+				index += 2;
 			}
 		}
 		else
 		{
-			_putchar(format[index]);
+			_putchar(*p);
+			index++;
 		}
 	}
 	va_end(list);
