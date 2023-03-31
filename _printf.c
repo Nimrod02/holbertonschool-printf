@@ -29,13 +29,14 @@ int _printf(const char *format, ...)
 				case 'c':
 				print_c(list);
 				break;
-
 				case 's':
 				print_s(list);
 				break;
-
 				case '%':
 				print_pourcent(list);
+				break;
+				default:
+					_putchar (format[index]);
 				break;
 			}
 		}
