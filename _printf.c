@@ -1,28 +1,49 @@
 #include "main.h"
 
+/**
+ * _printf - main function that printf a string and with possibles options
+ * @format: format is a string that contain all the test for the function
+ *
+ * Return: succes
+*/
+
 int _printf(const char *format, ...)
 {
-        int index = 0;
+	int index = 0;
 	va_list list;
-	va_start (list, format);
 
-        if (format == NULL)
-                return (EXIT_FAILURE);
+	va_start(list, format);
 
-	while (format[index] != '\0')
+	if (format == NULL)
+	return (-1);
+
+	for (; format[index] != '\0'; index++)
 	{
+
 		if (format[index] == '%')
 		{
-			// TODO: get function from c
-			// TODO: execute the previous function
+			index++;
+
+			switch (format[index])
+			{
+				case 'c':
+				print_c(list);
+				break;
+
+				case 's':
+				print_s(list);
+				break;
+
+				case '%':
+				print_pourcent(list);
+				break;
+			}
 		}
-		_putchar (format[index]);
-		// if (format[index] != '%')
-		// 	_putchar (format[index]);
-		index++;
+		else
+		{
+			_putchar(format[index]);
+		}
 	}
-
 	va_end(list);
-
-	return (EXIT_SUCCESS);
+	return (index);
 }

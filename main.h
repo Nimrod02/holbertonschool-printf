@@ -1,6 +1,5 @@
 #ifndef MAIN_H
 #define MAIN_H
-
 #include <unistd.h>
 #include <stdio.h>
 #include <stdio.h>
@@ -10,9 +9,9 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-void print_s(va_list list);
+int print_s(va_list list);
 void print_c(va_list list);
-
+int print_pourcent(__attribute((unused))va_list list);
 
 
 /**
@@ -23,8 +22,8 @@ void print_c(va_list list);
 
 typedef struct dt
 {
-        char c;
-        void (*func)(va_list);
+	char c;
+	void (*func)(va_list);
 } datatype;
 
 
