@@ -1,5 +1,6 @@
-#ifndef PRINT_H
-#define PRINT_H
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <unistd.h>
 #include <stdio.h>
 #include <stdio.h>
@@ -8,18 +9,11 @@
 
 
 int _printf(const char *format, ...);
+int _putchar(char c);
+void print_s(va_list list);
+void print_c(va_list list);
 
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
+
 
 /**
  * struct dt - structure for find the charactere linked to the function
@@ -30,7 +24,7 @@ int _putchar(char c)
 typedef struct dt
 {
         char c;
-        void (*func)(va_list)
+        void (*func)(va_list);
 } datatype;
 
 
