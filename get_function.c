@@ -3,7 +3,7 @@
 /**
  * print_s - fonction print a string
  * @list: list of argument
- * 
+ *
  * Return: return the index
 */
 
