@@ -2,7 +2,6 @@
 
 /**
  * print_s - fonction print a string
- * @str: char pointer to form a string
  * @list: list of argument
  * 
  * Return: return the index
@@ -25,7 +24,6 @@ int print_s(va_list list)
 
 /**
  * print_c - fonction print char
- * @character: character
  * @list: list of arguments
 */
 
